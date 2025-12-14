@@ -17,10 +17,15 @@ app/
 ├── schemas/          # Pydantic models for data validation
 ├── services/         # Business logic
 └── utils/            # Utility functions
+
+front/
+├── src/              # Frontend source code
+├── package.json      # Frontend dependencies
+└── vite.config.js    # Vite configuration
 ```
 
 ## Setup
-1. Install dependencies:
+1. Install backend dependencies:
    ```
    pip install -r requirements.txt
    ```
@@ -32,7 +37,13 @@ app/
    QWEN_BASE_URL=your_base_url_here
    ```
 
-3. Run the application:
+3. Install frontend dependencies:
+   ```
+   cd front
+   npm install
+   ```
+
+4. Run the backend application:
    ```
    python app/main.py
    ```
@@ -41,10 +52,35 @@ app/
    uvicorn app.main:app --reload
    ```
 
+5. Run the frontend application (in a separate terminal):
+   ```
+   cd front
+   npm run dev
+   ```
+
 ## API Documentation
 Once the server is running, visit:
 - Swagger UI: http://localhost:8000/docs
 - ReDoc: http://localhost:8000/redoc
+
+## Frontend Development
+
+To start the frontend development server:
+
+```bash
+cd front
+npm install  # Install dependencies
+npm run dev  # Start development server
+```
+
+The frontend will be available at http://localhost:5173 by default.
+
+To build the frontend for production:
+
+```bash
+cd front
+npm run build
+```
 
 ## API Endpoints
 
